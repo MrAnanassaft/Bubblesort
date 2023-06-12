@@ -7,7 +7,7 @@ public class MainProgram {
         setRandomArray(array);
         //setSetArray(array);
         System.out.println();
-        sortArray(array);
+        sortArray2(array);
         printArrayAfterSort(array);
     }
 
@@ -18,8 +18,19 @@ public class MainProgram {
         }
         return true;
     }
+    public void sortArray(int[] array){
+        for(int i = 1; i < array.length; i++){
+            for(int j = 0; j < array.length-i; j++){
+                if(array[j] > array[j+1]){
+                    int help = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = help;
+                }
+            }
+        }
+    }
 
-    private static void sortArray(int[] array){
+    private static void sortArray2(int[] array){
         for(int i = 1; i < array.length; i++){
             //newLoop += 1;
             for(int j = 0; j < array.length-i; j++){
@@ -31,7 +42,7 @@ public class MainProgram {
         }
     }
 
-    private static void sortArray2(int[] array){
+    private static void sortArray3(int[] array){
         for(int i = 1; i < array.length; i++){
             //newLoop += 1;
             if(isSorted(array))
